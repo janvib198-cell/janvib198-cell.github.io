@@ -11,6 +11,7 @@
             --border-color: #30363d;
             --accent-color: #10b981;
             --accent-hover: #059669;
+            --soft-accent: #38bdf8;
             --text-primary: #f0f6fc;
             --text-secondary: #8b949e;
         }
@@ -32,7 +33,6 @@
             position: relative;
             min-height: 100vh;
             overflow-x: hidden;
-            /* Subtle grid lines in background */
             background-image: 
                 radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
             background-size: 24px 24px;
@@ -134,9 +134,22 @@
             border-radius: 2px;
         }
 
+        .subsection-title {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
         p {
             color: var(--text-secondary);
             font-size: 1rem;
+        }
+
+        .skills-group {
+            margin-bottom: 1.5rem;
         }
 
         .skills-list {
@@ -159,6 +172,16 @@
 
         .skill-tag:hover {
             border-color: var(--accent-color);
+        }
+
+        /* Distinct styling for soft skills */
+        .skill-tag.soft {
+            border-color: rgba(56, 189, 248, 0.3);
+            color: var(--soft-accent);
+        }
+
+        .skill-tag.soft:hover {
+            border-color: var(--soft-accent);
         }
 
         .projects-grid {
@@ -270,7 +293,7 @@
                 justify-content: center;
             }
             .shape {
-                display: none; /* Hides floating shapes on small screens to avoid clutter */
+                display: none;
             }
         }
     </style>
@@ -294,19 +317,33 @@
     <section id="about">
         <h2>About Me</h2>
         <p>
-            I am a first-year student exploring core software development, web architecture, and serverless logic to build a strong engineering foundation.
+            I am a first-year student exploring core software development, web architecture, and serverless logic to build a strong engineering foundation. Outside of technical problem-solving, I thrive on collaborative leadership, public speaking, and active communication.
         </p>
     </section>
 
     <section id="skills">
-        <h2>Currently Exploring & Learning</h2>
-        <ul class="skills-list">
-            <li class="skill-tag">JavaScript</li>
-            <li class="skill-tag">Vercel & Serverless</li>
-            <li class="skill-tag">Python</li>
-            <li class="skill-tag">Git & GitHub</li>
-            <li class="skill-tag">CS Fundamentals (CS50)</li>
-        </ul>
+        <h2>Skills & Interests</h2>
+        
+        <div class="skills-group">
+            <h3 class="subsection-title">Technical Skills</h3>
+            <ul class="skills-list">
+                <li class="skill-tag">JavaScript</li>
+                <li class="skill-tag">Vercel & Serverless</li>
+                <li class="skill-tag">Python</li>
+                <li class="skill-tag">Git & GitHub</li>
+                <li class="skill-tag">CS Fundamentals (CS50)</li>
+            </ul>
+        </div>
+
+        <div class="skills-group">
+            <h3 class="subsection-title">Interpersonal & Leadership</h3>
+            <ul class="skills-list">
+                <li class="skill-tag soft">Public Speaking</li>
+                <li class="skill-tag soft">Leadership</li>
+                <li class="skill-tag soft">Effective Communication</li>
+                <li class="skill-tag soft">Team Collaboration</li>
+            </ul>
+        </div>
     </section>
 
     <section id="projects">
