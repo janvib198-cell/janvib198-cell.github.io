@@ -7,11 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <style>
         :root {
             --bg-color: #0d1117;
-            --card-bg: rgba(22, 27, 34, 0.75);
+            --card-bg: #161b22;
             --border-color: #30363d;
             --accent-color: #10b981;
             --accent-hover: #059669;
@@ -24,33 +23,23 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            scroll-behavior: smooth;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-primary);
             line-height: 1.65;
-            padding: 0 1.5rem 3rem 1.5rem;
+            padding: 2rem 1.5rem;
             max-width: 900px;
             margin: 0 auto;
-            position: relative;
-            min-height: 100vh;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
-            background-size: 24px 24px;
         }
 
-        /* Top Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 0;
+            padding-bottom: 1.5rem;
             margin-bottom: 3rem;
             border-bottom: 1px solid var(--border-color);
         }
@@ -60,7 +49,6 @@
             font-size: 1.15rem;
             color: var(--text-primary);
             text-decoration: none;
-            letter-spacing: -0.02em;
         }
 
         .nav-logo span {
@@ -76,60 +64,14 @@
         .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.95srem;
             font-weight: 500;
-            transition: color 0.2s ease;
         }
 
         .nav-links a:hover {
             color: var(--text-primary);
         }
 
-        /* Ambient Glows & Figures */
-        .ambient-glow {
-            position: fixed;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
-            z-index: -2;
-            pointer-events: none;
-        }
-
-        .glow-1 { top: -50px; left: -100px; }
-        .glow-2 { bottom: 10%; right: -100px; }
-
-        .shape {
-            position: fixed;
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            z-index: -1;
-            pointer-events: none;
-            animation: float 12s infinite ease-in-out;
-        }
-
-        .shape-circle {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            top: 20%;
-            right: 5%;
-        }
-
-        .shape-square {
-            width: 60px;
-            height: 60px;
-            bottom: 25%;
-            left: 4%;
-            transform: rotate(45deg);
-            animation-delay: -4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(10deg); }
-        }
-
-        /* Hero Header Section */
         header {
             margin-bottom: 4rem;
         }
@@ -143,10 +85,8 @@
 
         h1 {
             font-size: 3rem;
-            letter-spacing: -0.03em;
             color: var(--text-primary);
             margin-bottom: 1rem;
-            line-height: 1.1;
             font-weight: 700;
         }
 
@@ -169,28 +109,15 @@
         }
 
         .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
             padding: 0.65rem 1.25rem;
             background-color: var(--accent-color);
             color: #0d1117;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
-            transition: background-color 0.2s ease, transform 0.2s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-1px);
         }
 
         .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
             padding: 0.65rem 1.25rem;
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -198,15 +125,6 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
-            backdrop-filter: blur(4px);
-            transition: all 0.2s ease;
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--accent-color);
-            color: var(--accent-color);
-            transform: translateY(-1px);
         }
 
         section {
@@ -219,27 +137,13 @@
             margin-bottom: 1.25rem;
             border-left: 4px solid var(--accent-color);
             padding-left: 0.6rem;
-            line-height: 1.2;
-            border-radius: 2px;
-            font-weight: 700;
-        }
-
-        .subsection-title {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 700;
         }
 
         p {
             color: var(--text-secondary);
-            font-size: 1rem;
-            font-weight: 400;
+            margin-bottom: 1rem;
         }
 
-        /* Cards & Grids */
         .card-grid {
             display: flex;
             flex-direction: column;
@@ -251,13 +155,6 @@
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 1.5rem;
-            backdrop-filter: blur(8px);
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .info-card:hover {
-            transform: translateY(-2px);
-            border-color: #484f58;
         }
 
         .card-header {
@@ -270,17 +167,6 @@
         .info-card h3 {
             font-size: 1.15rem;
             color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        .badge-status {
-            font-size: 0.75rem;
-            padding: 0.2rem 0.5rem;
-            border-radius: 12px;
-            background-color: rgba(234, 179, 8, 0.1);
-            color: #eab308;
-            border: 1px solid rgba(234, 179, 8, 0.2);
-            font-weight: 600;
         }
 
         .badge-role {
@@ -293,45 +179,21 @@
             font-weight: 600;
         }
 
-        .info-card p {
-            margin-bottom: 0.8rem;
-        }
-
-        /* Skills Layout */
-        .skills-group {
-            margin-bottom: 1.5rem;
-        }
-
         .skills-list {
             display: flex;
             flex-wrap: wrap;
             gap: 0.6rem;
             list-style: none;
+            margin-top: 0.5rem;
         }
 
         .skill-tag {
-            background-color: var(--card-bg);
+            background-color: var(--bg-color);
             color: var(--text-primary);
             padding: 0.4rem 0.85rem;
             border-radius: 20px;
             font-size: 0.875rem;
             border: 1px solid var(--border-color);
-            backdrop-filter: blur(4px);
-            font-weight: 500;
-            transition: border-color 0.2s ease;
-        }
-
-        .skill-tag:hover {
-            border-color: var(--accent-color);
-        }
-
-        .skill-tag.soft {
-            border-color: rgba(56, 189, 248, 0.3);
-            color: var(--soft-accent);
-        }
-
-        .skill-tag.soft:hover {
-            border-color: var(--soft-accent);
         }
 
         .project-links {
@@ -345,20 +207,105 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-            transition: color 0.2s ease;
         }
 
         .project-link:hover {
-            color: var(--accent-hover);
             text-decoration: underline;
         }
-
-        @media (max-width: 600px) {
-            body { padding: 0 1rem 2rem 1rem; }
-            h1 { font-size: 2.2rem; }
-            .nav-links { display: none; }
-        }
     </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="nav-logo">janvi<span>.dev</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <p class="hero-subtitle">Hi, I'm</p>
+        <h1>Janvi Bhardwaj</h1>
+        <p class="hero-description">
+            First-year CSE student at <span>VIT Chennai</span> — building software systems, breaking things down, and writing about the hidden technical challenges in everyday life.
+        </p>
+        <div class="hero-buttons">
+            <a href="https://github.com/janvib198-cell" target="_blank" class="btn-primary">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/janvi-bhardwaj-163379424" target="_blank" class="btn-secondary">LinkedIn ↗</a>
+            <a href="#blogs" class="btn-secondary">Read my blog ↓</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a first-year student exploring core software development, web architecture, and serverless logic. Alongside building technical projects, I actively engage in campus leadership through event coordination, team development, and public speaking.</p>
+    </section>
+
+    <section id="experience">
+        <h2>Campus Involvement & Experience</h2>
+        <div class="card-grid">
+            <div class="info-card">
+                <div class="card-header">
+                    <h3>MIC — Management & Development Department</h3>
+                    <span class="badge-role">Team Member</span>
+                </div>
+                <p>Contributing to team operations, event coordination, and strategic planning within the department to foster community growth and project execution.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills & Capabilities</h2>
+        <p>Technical Fundamentals</p>
+        <ul class="skills-list">
+            <li class="skill-tag">JavaScript</li>
+            <li class="skill-tag">Vercel & Serverless</li>
+            <li class="skill-tag">Python</li>
+            <li class="skill-tag">Git & GitHub</li>
+            <li class="skill-tag">CS Fundamentals (CS50)</li>
+        </ul>
+    </section>
+
+    <section id="blogs">
+        <h2>Technical Blog & Research</h2>
+        <div class="card-grid">
+            <div class="info-card">
+                <div class="card-header">
+                    <h3>The Thermal Shock Project (Part 1)</h3>
+                    <span class="badge-role">Featured Article</span>
+                </div>
+                <p>Investigating and quantifying "thermal transition stress" caused by frequent movement between AC-cooled environments and tropical heat at VIT Chennai.</p>
+                <div class="project-links">
+                    <a href="https://dev.to/janvi_bhardwaj/the-invisible-health-risk-in-every-ac-building-2c2e" target="_blank" class="project-link">Read Full Article on DEV.to →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects & Coursework</h2>
+        <div class="card-grid">
+            <div class="info-card">
+                <h3>Microsoft Certification Tracker</h3>
+                <p>A web application that tracks learning certification progress, integrated with Vercel serverless functions.</p>
+                <div class="project-links">
+                    <a href="https://github.com/janvib198-cell/Microsoft-Certification-Tracker" target="_blank" class="project-link">Repository →</a>
+                    <a href="https://final-5-0.vercel.app" target="_blank" class="project-link">Live Demo →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Connect With Me</h2>
+        <div class="project-links">
+            <a href="https://github.com/janvib198-cell" target="_blank" class="project-link">GitHub Profile →</a>
+            <a href="https://www.linkedin.com/in/janvi-bhardwaj-163379424" target="_blank" class="project-link">LinkedIn Profile →</a>
+        </div>
+    </section>
+
+</body>
+</html>
