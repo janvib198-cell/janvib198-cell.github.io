@@ -255,4 +255,110 @@
             transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
-        .info-
+        .info-card:hover {
+            transform: translateY(-2px);
+            border-color: #484f58;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card h3 {
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .badge-status {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            background-color: rgba(234, 179, 8, 0.1);
+            color: #eab308;
+            border: 1px solid rgba(234, 179, 8, 0.2);
+            font-weight: 600;
+        }
+
+        .badge-role {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--accent-color);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            font-weight: 600;
+        }
+
+        .info-card p {
+            margin-bottom: 0.8rem;
+        }
+
+        /* Skills Layout */
+        .skills-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            list-style: none;
+        }
+
+        .skill-tag {
+            background-color: var(--card-bg);
+            color: var(--text-primary);
+            padding: 0.4rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(4px);
+            font-weight: 500;
+            transition: border-color 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--accent-color);
+        }
+
+        .skill-tag.soft {
+            border-color: rgba(56, 189, 248, 0.3);
+            color: var(--soft-accent);
+        }
+
+        .skill-tag.soft:hover {
+            border-color: var(--soft-accent);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1.25rem;
+            margin-top: 0.8rem;
+        }
+
+        .project-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: color 0.2s ease;
+        }
+
+        .project-link:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 0 1rem 2rem 1rem; }
+            h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
