@@ -21,14 +21,15 @@
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-primary);
             line-height: 1.6;
-            padding: 3rem 1.5rem;
-            max-width: 800px;
+            padding: 0 1.5rem 3rem 1.5rem;
+            max-width: 900px;
             margin: 0 auto;
             position: relative;
             min-height: 100vh;
@@ -36,6 +37,46 @@
             background-image: 
                 radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
             background-size: 24px 24px;
+        }
+
+        /* Top Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
         }
 
         /* Ambient Glows & Figures */
@@ -77,47 +118,96 @@
             animation-delay: -4s;
         }
 
-        .shape-ring {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border-style: dashed;
-            top: 55%;
-            right: 8%;
-            animation-delay: -8s;
-        }
-
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(0deg); }
             50% { transform: translateY(-15px) rotate(10deg); }
         }
 
-        /* Layout Structure */
+        /* Hero Header Section */
         header {
-            margin-bottom: 3rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 2rem;
+            margin-bottom: 4rem;
         }
 
-        h1 {
-            font-size: 2.75rem;
-            letter-spacing: -0.025em;
-            color: var(--text-primary);
-        }
-
-        .tagline {
-            font-size: 1.15rem;
+        .hero-subtitle {
+            font-size: 1rem;
             color: var(--accent-color);
-            margin-top: 0.25rem;
+            margin-bottom: 0.5rem;
             font-weight: 500;
         }
 
+        h1 {
+            font-size: 3rem;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-description span {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.65rem 1.25rem;
+            background-color: var(--accent-color);
+            color: #0d1117;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.65rem 1.25rem;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            backdrop-filter: blur(4px);
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            transform: translateY(-1px);
+        }
+
         section {
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
         }
 
         h2 {
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             color: var(--text-primary);
             margin-bottom: 1.25rem;
             border-left: 4px solid var(--accent-color);
@@ -233,7 +323,6 @@
             border-color: var(--soft-accent);
         }
 
-        /* Links & Buttons */
         .project-links {
             display: flex;
             gap: 1.25rem;
@@ -256,39 +345,10 @@
             text-decoration: underline;
         }
 
-        .contact-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.6rem 1.2rem;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            backdrop-filter: blur(4px);
-            transition: all 0.2s ease;
-        }
-
-        .contact-btn:hover {
-            border-color: var(--accent-color);
-            color: var(--accent-color);
-            transform: translateY(-1px);
-        }
-
         @media (max-width: 600px) {
-            body { padding: 1.5rem 1rem; }
-            h1 { font-size: 2rem; }
-            .contact-links { flex-direction: column; }
-            .contact-btn { text-align: center; justify-content: center; }
-            .shape { display: none; }
+            body { padding: 0 1rem 2rem 1rem; }
+            h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -296,14 +356,32 @@
 
     <div class="ambient-glow glow-1"></div>
     <div class="ambient-glow glow-2"></div>
-
     <div class="shape shape-circle"></div>
     <div class="shape shape-square"></div>
-    <div class="shape shape-ring"></div>
 
+    <!-- Top Navigation Bar -->
+    <nav>
+        <a href="#" class="nav-logo">janvi<span>.dev</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="https://janvib198-cell.github.io" target="_blank">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
     <header>
+        <p class="hero-subtitle">Hi, I'm</p>
         <h1>Janvi Bhardwaj</h1>
-        <p class="tagline">First-Year Student & Tech Explorer</p>
+        <p class="hero-description">
+            First-year CSE student at <span>VIT Chennai</span> — building software systems, breaking things down, and writing about the hidden technical challenges in everyday life.
+        </p>
+        <div class="hero-buttons">
+            <a href="https://github.com/janvib198-cell" target="_blank" class="btn-primary">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/janvi-bhardwaj-163379424" target="_blank" class="btn-secondary">LinkedIn ↗</a>
+            <a href="https://janvib198-cell.github.io" target="_blank" class="btn-secondary">Read my blog ↓</a>
+        </div>
     </header>
 
     <section id="about">
@@ -353,8 +431,22 @@
     </section>
 
     <section id="projects">
-        <h2>Projects & Coursework</h2>
+        <h2>Projects & Research Portfolio</h2>
         <div class="card-grid">
+            
+            <!-- Health-Tech Research Project -->
+            <div class="info-card">
+                <div class="card-header">
+                    <h3>The Thermal Shock Project (Part 1)</h3>
+                    <span class="badge-role">Research & Blog</span>
+                </div>
+                <p>Investigating and quantifying "thermal transition stress" caused by frequent movement between AC-cooled environments and tropical heat at VIT Chennai, backed by peer-reviewed public health data.</p>
+                <div class="project-links">
+                    <a href="https://janvib198-cell.github.io" target="_blank" class="project-link">Read Live Article →</a>
+                    <a href="https://github.com/janvib198-cell/janvib198-cell.github.io" target="_blank" class="project-link">GitHub Repo →</a>
+                </div>
+            </div>
+
             <div class="info-card">
                 <div class="card-header">
                     <h3>Microsoft Certification Tracker</h3>
@@ -388,9 +480,9 @@
 
     <section id="contact">
         <h2>Connect With Me</h2>
-        <div class="contact-links">
-            <a href="https://github.com/janvib198-cell" target="_blank" class="contact-btn">GitHub Profile</a>
-            <a href="https://www.linkedin.com/in/janvi-bhardwaj-163379424" target="_blank" class="contact-btn">LinkedIn Profile</a>
+        <div class="project-links">
+            <a href="https://github.com/janvib198-cell" target="_blank" class="project-link">GitHub Profile →</a>
+            <a href="https://www.linkedin.com/in/janvi-bhardwaj-163379424" target="_blank" class="project-link">LinkedIn Profile →</a>
         </div>
     </section>
 
