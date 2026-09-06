@@ -327,3 +327,165 @@
             display: flex;
             gap: 1.25rem;
             margin-top: 0.8rem;
+        }
+
+        .project-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: color 0.2s ease;
+        }
+
+        .project-link:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 0 1rem 2rem 1rem; }
+            h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="shape shape-circle"></div>
+    <div class="shape shape-square"></div>
+
+    <nav>
+        <a href="#" class="nav-logo">janvi<span>.dev</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <p class="hero-subtitle">Hi, I'm</p>
+        <h1>Janvi Bhardwaj</h1>
+        <p class="hero-description">
+            First-year CSE student at <span>VIT Chennai</span> — building software systems, breaking things down, and writing about the hidden technical challenges in everyday life.
+        </p>
+        <div class="hero-buttons">
+            <a href="https://github.com/janvib198-cell" target="_blank" class="btn-primary">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/janvi-bhardwaj-163379424" target="_blank" class="btn-secondary">LinkedIn ↗</a>
+            <a href="#blogs" class="btn-secondary">Read my blog ↓</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a first-year student exploring core software development, web architecture, and serverless logic. Alongside building technical projects, I actively engage in campus leadership through event coordination, team development, and public speaking.
+        </p>
+    </section>
+
+    <section id="experience">
+        <h2>Campus Involvement & Experience</h2>
+        <div class="card-grid">
+            <div class="info-card">
+                <div class="card-header">
+                    <h3>MIC — Management & Development Department</h3>
+                    <span class="badge-role">Team Member</span>
+                </div>
+                <p>Contributing to team operations, event coordination, and strategic planning within the department to foster community growth and project execution.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills & Capabilities</h2>
+        
+        <div class="skills-group">
+            <h3 class="subsection-title">Technical Fundamentals</h3>
+            <ul class="skills-list">
+                <li class="skill-tag">JavaScript</li>
+                <li class="skill-tag">Vercel & Serverless</li>
+                <li class="skill-tag">Python</li>
+                <li class="skill-tag">Git & GitHub</li>
+                <li class="skill-tag">CS Fundamentals (CS50)</li>
+            </ul>
+        </div>
+
+        <div class="skills-group">
+            <h3 class="subsection-title">Management & Soft Skills</h3>
+            <ul class="skills-list">
+                <li class="skill-tag soft">Public Speaking</li>
+                <li class="skill-tag soft">Leadership</li>
+                <li class="skill-tag soft">Team Coordination</li>
+                <li class="skill-tag soft">Communication</li>
+                <li class="skill-tag soft">Event Management</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="blogs">
+        <h2>Technical Blog & Research</h2>
+        <div class="card-grid">
+            <div class="info-card">
+                <div class="card-header">
+                    <h3>The Thermal Shock Project (Part 1)</h3>
+                    <span class="badge-role">Featured Article</span>
+                </div>
+                <p>Investigating and quantifying "thermal transition stress" caused by frequent movement between AC-cooled environments and tropical heat at VIT Chennai, backed by peer-reviewed public health data.</p>
+                <div class="project-links">
+                    <a href="https://github.com/janvib198-cell/janvib198-cell.github.io/blob/main/_posts/2026-09-06-invisible-health-risk-ac-building.md" target="_blank" class="project-link">Read Source Markdown →</a>
+                    <a href="https://github.com/janvib198-cell/janvib198-cell.github.io" target="_blank" class="project-link">GitHub Repo →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects & Coursework</h2>
+        <div class="card-grid">
+            <div class="info-card">
+                <div class="card-header">
+                    <h3>Microsoft Certification Tracker</h3>
+                </div>
+                <p>A web application that tracks learning certification progress, integrated with Vercel serverless functions and a fallback mock engine for automated step explanations.</p>
+                <div class="project-links">
+                    <a href="https://github.com/janvib198-cell/Microsoft-Certification-Tracker" target="_blank" class="project-link">Repository →</a>
+                    <a href="https://final-5-0.vercel.app" target="_blank" class="project-link">Live Demo →</a>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="card-header">
+                    <h3>Python Turtle Mini-Project</h3>
+                </div>
+                <p>An introductory project built with Python's Turtle library to practice core programming logic, control flow, and basic functions.</p>
+                <div class="project-links">
+                    <a href="https://github.com/janvib198-cell/python-turtle-project" target="_blank" class="project-link">View Repository →</a>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="card-header">
+                    <h3>Harvard CS50 Coursework</h3>
+                    <span class="badge-status">In Progress</span>
+                </div>
+                <p>Currently working through foundational computer science problem sets to get comfortable with core engineering concepts.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Connect With Me</h2>
+        <div class="project-links">
+            <a href="https://github.com/janvib198-cell" target="_blank" class="project-link">GitHub Profile →</a>
+            <a href="https://www.linkedin.com/in/janvi-bhardwaj-163379424" target="_blank" class="project-link">LinkedIn Profile →</a>
+        </div>
+    </section>
+
+</body>
+</html>
